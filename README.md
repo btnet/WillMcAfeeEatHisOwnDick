@@ -4,7 +4,7 @@ A website to track if McAfee is going to be eating his own dick on live TV if Bi
 # Genesis
 3:02 PM - 17 Jul 2017 [@officialmcafee](https://twitter.com/officialmcafee/status/887024683379544065) tweeted the following:
 
-"if not, I will eat my dick on national television." in reply to "so 1btc 500k $ within 3years?" [tweet by @maguraaa](https://twitter.com/maguraaa/status/887023868531048448)
+"if not, I will eat my dick on national television." in reply to "so 1btc 500k $ within 3years?" tweet by [@maguraaa](https://twitter.com/maguraaa/status/887023868531048448)
 
 # What, When, How
 Bitcoin had a price index (bpi) the day of the tweet (07/17/17) according to [Coindesk API](https://api.coindesk.com/v1/bpi/historical/close.json?start=2017-07-17&end=2017-07-17) of $2244.265. This is our starting value, or principal. 
