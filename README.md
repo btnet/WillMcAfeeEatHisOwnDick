@@ -16,8 +16,11 @@ Using the following formula we can determine at what rate bitcoin has to grow pe
 where:
 
 r = Growth rate as a decimal
+
 n = number of days left within 3 year period from tweet (07/17/20)
+
 p = Principal Amount (2244.265)
+
 a = Accrued Amount (500000)
 
 After we determine the daily growth rate 'r' we can use it to compare to the bitcoins past 24 hour growth by getting the bpi from api.coindesk.com. 
@@ -28,8 +31,10 @@ Past 24 hours index can be used with the following formula to determine current 
 
 `CurrRate = ((c-y)/y)*100`
 
-where
+where:
+
 c = current bpi
+
 y = yesterday's bpi
 
 When the site loads it retrives the 'GoalRate' and the 'CurrRate' for comparison. If the 'GoalRate' is higher than 'CurrRate' then McAfee might be eating his own dick live on TV, else he's not. 
