@@ -15,15 +15,13 @@ Using the following formula we can determine at what rate bitcoin has to grow pe
 
 where:
 
-r = Growth rate as a decimal
-
 n = number of days left within 3 year period from tweet (07/17/20)
 
 p = Principal Amount (2244.265)
 
 a = Accrued Amount (500000)
 
-After we determine the daily growth rate 'r' we can use it to compare to the bitcoins past 24 hour growth by getting the bpi from api.coindesk.com. 
+After we determine the daily growth goal rate we can use it to compare to the bitcoins past 24 hour growth by getting the bpi from api.coindesk.com. 
 
 `https://api.coindesk.com/v1/bpi/historical/close.json?start=[PreviousDate]&end=[CurrentDate]`
 
