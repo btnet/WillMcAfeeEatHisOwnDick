@@ -11,7 +11,7 @@ Bitcoin had a price index (bpi) the day of the tweet (07/17/17) according to [Co
 
 Using the following formula we can determine at what rate bitcoin has to grow per remaining days in the bet.
 
-`goalRate = n((a/p)^(1/n) - 1)`
+`goalRate = ((a-p)/p)/n`
 
 where:
 
@@ -27,7 +27,7 @@ After we determine the daily growth goal rate we can use it to compare to the bi
 
 Past 24 hours index can be used with the following formula to determine current growth rate for comparison with the goal rate determined with above formula. 
 
-`currRate = ((c-y)/y)*100`
+`currRate = (c-y)/y`
 
 where:
 
