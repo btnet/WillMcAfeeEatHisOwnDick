@@ -47,6 +47,8 @@ Additionally we can calculate the price goalPrice parity with the following:
 
 `parPrice = 10^(goalRate * (e/365)) * p`
 
+where:
+
 p = Static tweet bpi (2244.265)
 
 e = number of days elapsed from tweet date (07/17/17)
