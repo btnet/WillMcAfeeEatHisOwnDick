@@ -72,3 +72,6 @@ Sep 5, 2017 12:11:00 UTC
 `percDiff = ((2.120867878-0.7179145295)/0.7179145295) * 100 ` = 195.4206651% ahead of goal rate
 
 `parPrice = 10^(0.7179145295 * (50/365)) * 2244.265` = $2814.612374
+
+PS: I'm not so smart with the math thing - please correct where I am wrong.
+PPS: My first project here - I have no idea what I'm doing. You've been warned.
