@@ -23,7 +23,12 @@ init();
 
 function getDaysLeft(){
 	n = dayDiff(today, eDate);
-	$("#daysLeft").val(n);
+	var dayStr = " days";
+	if (n < 1){
+		n = 0;
+		dayStr = " day";
+	}
+	$("#daysLeft").text(n + dayStr);
 	return n;
 }
 
@@ -51,7 +56,7 @@ function getCurrBpi(){
 
 function setCurrentBpi(v){
 	c = Math.round(v *100)/100;
-	$("#currBpi").val(c);
+	$("#currBpi").text("$" + c);
 }
 
 //goalRate = LOG10(a/c)/(n/365)
@@ -71,14 +76,29 @@ function getCurrRate(){
 //percDiff = ((currRate-goalRate)/goalRate)*100
 function getPercDiff(){
 	percDiff = ((currRate-goalRate)/goalRate)*100;
-	$("#percDiff").val(Math.round(percDiff*100)/100);
+	var badgeStr;
+	var dickMenuStr;
+	$("#percDiff").text(Math.round(percDiff*100)/100 + "%");
+	if (percDiff > 0 && percDiff < 10){
+		badgeStr = "badge-warning";
+		dickMenuStr = "Maybe?";
+	}
+	else if (percDiff > 10){
+		badgeStr = "badge-success";
+		dickMenuStr = "No!";
+	} else {
+		badgeStr = "badge-danger";
+		dickMenuStr = "Yes!";
+	}
+	$("#percDiff").addClass(badgeStr);
+	$("#isDickOnTheMenu").text(dickMenuStr);
 	return percDiff;
 }
 
 //parPrice = 10^(goalRate * (e/365)) * p
 function getParPrice(){
 	parPrice = Math.pow(10, goalRate * (e/365)) * p;
-	$("#parPrice").val(Math.round(parPrice*100)/100);
+	$("#parPrice").text("$" + Math.round(parPrice*100)/100);
 	return parPrice;
 }
 
