@@ -43,7 +43,7 @@ We can get the percentage difference with the following:
 
 `percDiff = ((currRate-goalRate)/goalRate)*100`
 
-Additionally we can calculate the price goalPrice parity with the following: 
+Additionally we can calculate the goal price parity with the following: 
 
 `parPrice = 10^(goalRate * (e/365)) * p`
 
@@ -71,4 +71,4 @@ Sep 5, 2017 12:11:00 UTC
 
 `percDiff = ((2.120867878-0.7179145295)/0.7179145295) * 100 ` = 195.4206651% ahead of goal rate
 
-`parPrice = 10^(0.8192944472 * (50/365)) * 2244.265` = $2906.07121418841
+`parPrice = 10^(0.7179145295 * (50/365)) * 2244.265` = $2814.612374
