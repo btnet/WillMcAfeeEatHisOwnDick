@@ -11,7 +11,7 @@ Bitcoin had a price index (bpi) the day of the tweet (07/17/17) according to [Co
 
 Using the following formula we can determine at what rate bitcoin has to grow per remaining days in the bet.
 
-`goalRate = LOG(a/c)/(n/365)`
+`goalRate = LOG10(a/c)/(n/365)`
 
 where:
 
@@ -27,7 +27,7 @@ After we determine the daily growth goal rate we can use it to compare to Bitcoi
 
 The following formula is used to determine current growth rate for comparison with the goal rate determined with above formula. 
 
-`currRate = LOG(c-s)/(e/365)`
+`currRate = LOG10(c-s)/(e/365)`
 
 where:
 
@@ -65,9 +65,9 @@ Sep 5, 2017 12:11:00 UTC
 
 [Number of days since tweet](https://www.google.com/search?q=how+many+days+since+july+17+2017): 50
 
-`goalRate = LOG(500000/4381.31)/(1046/365) ` = 0.7179145295
+`goalRate = LOG10(500000/4381.31)/(1046/365) ` = 0.7179145295
 
-`currRate = LOG(4381.31/2244.265)/(50/365) ` = 2.120867878
+`currRate = LOG10(4381.31/2244.265)/(50/365) ` = 2.120867878
 
 `percDiff = ((2.120867878-0.7179145295)/0.7179145295) * 100 ` = 195.4206651% ahead of goal rate
 
