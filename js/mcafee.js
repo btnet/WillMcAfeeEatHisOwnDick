@@ -78,6 +78,7 @@ function getPercDiff(){
 	percDiff = ((currRate-goalRate)/goalRate)*100;
 	var badgeStr;
 	var dickMenuStr;
+	var aheadOrBelowStr = "ahead of";
 	$("#percDiff").text(Math.round(percDiff*100)/100 + "%");
 	if (percDiff > 0 && percDiff < 10){
 		badgeStr = "badge-warning";
@@ -89,9 +90,11 @@ function getPercDiff(){
 	} else {
 		badgeStr = "badge-danger";
 		dickMenuStr = "Yes!";
+		aheadOrBelowStr = "below";
 	}
 	$("#percDiff").addClass(badgeStr);
 	$("#isDickOnTheMenu").text(dickMenuStr);
+	$("#aheadOrBelow").text(aheadOrBelowStr);
 	return percDiff;
 }
 
