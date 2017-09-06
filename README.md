@@ -27,13 +27,13 @@ After we determine the daily growth goal rate we can use it to compare to Bitcoi
 
 The following formula is used to determine current growth rate for comparison with the goal rate determined with above formula. 
 
-`currRate = LOG10(c-s)/(e/365)`
+`currRate = LOG10(c-p)/(e/365)`
 
 where:
 
 c = current bpi
 
-s = static tweet bpi (2244.265)
+p = static tweet bpi (2244.265)
 
 e = number of days elapsed from tweet date (07/17/17)
 
