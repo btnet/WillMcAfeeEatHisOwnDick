@@ -1,120 +1,28 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-		<title>Will McAfee Eat His Own Dick ?</title>
-		<meta name="description" content="A website to track if McAfee is going to be eating his own dick on live TV if Bitcoin price is not over $500k.">
-		<meta name="viewport" content="width=device-width">
-		<script type="text/javascript">
-			$(document).ready(function(){
-				
-				var p = 2244.265; //principal
-				var a = 500000; //goal
-				var n, //number of days left
-					e, //number of days elapsed
-					c, //current bpi
-					goalRate,
-					currRate,
-					percDiff,
-					parPrice;
-					
-				var today = new Date(); //today
-				var eDate = new Date("7/17/20"); //end date of bet
-				var tDate = new Date("7/17/17"); //date of bet tweet
-				
-				function init(){
-					getDaysLeft();
-					getDaysElapsed();
-					getCurrBpi();
-				}
-				init();
-				
-				function getDaysLeft(){
-					n = dayDiff(today, eDate);
-					$("#daysLeft").val(n);
-					return n;
-				}
-				
-				function getDaysElapsed(){
-					e = dayDiff(tDate, today);
-					$("#daysElapsed").val(e);
-					return e;
-				}
-				
-				function getCurrBpi(){
-					var url = "https://api.coindesk.com/v1/bpi/currentprice.json"; 
-					$.getJSON(url)
-					.done(function ( json ) {
-						setCurrentBpi(json.bpi.USD.rate_float);
-						getGoalRate();
-						getCurrRate();
-						getPercDiff();
-						getParPrice();
-					}).fail(function (jqxhr, textStatus, error) {
-						var err = textStatus + ", " + error;
-						console.log( "Request Failed: " + err );
-					});
-					return c;
-				}
-				
-				function setCurrentBpi(v){
-					c = Math.round(v *100)/100;
-					$("#currBpi").val(c);
-				}
-				
-				//goalRate = LOG10(a/c)/(n/365)
-				function getGoalRate(){
-					goalRate = Math.log10(a/c)/(n/365);
-					$("#goalRate").val(goalRate);
-					return goalRate;
-				}
-				
-				//currRate = LOG10(c-p)/(e/365)
-				function getCurrRate(){
-					currRate = Math.log10(c/p)/(e/365);
-					$("#currRate").val(currRate);
-					return currRate;
-				}
-				
-				//percDiff = ((currRate-goalRate)/goalRate)*100
-				function getPercDiff(){
-					percDiff = ((currRate-goalRate)/goalRate)*100;
-					$("#percDiff").val(Math.round(percDiff*100)/100);
-					return percDiff;
-				}
-				
-				//parPrice = 10^(goalRate * (e/365)) * p
-				function getParPrice(){
-					parPrice = Math.pow(10, goalRate * (e/365)) * p;
-					$("#parPrice").val(Math.round(parPrice*100)/100);
-					return parPrice;
-				}
-				
-				//Returns the base log
-				function getBaseLog(x ,y){
-					return Math.log(y) / Math.log(x);
-				}
-
-				//Returns difference between two dates
-				function dayDiff(first, second) {
-					return Math.round((second-first)/(1000*60*60*24));
-				}
-				
-			});
-		</script>
-	</head>
-	<body>
-		
-		<input id="daysElapsed"> days elapsed</input></p>
-		<input id="daysLeft"> days left</input></p>
-		<input id="currBpi"> current bpi</input></p>
-		<input id="goalRate"> goal rate</input></p>
-		<input id="currRate"> current rate</input></p>
-		<input id="percDiff"> rate difference %</input></p>
-		<input id="parPrice"> par price</input></p>
-	  
-	</body>
-
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <title>Will McAfee Eat His Own Dick ?</title>
+    <meta name="description" content="A website to track if McAfee is going to be eating his own dick on live TV if Bitcoin price is not over $500k.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Will McAfee Eat His Own Dick ?</h1>
+	<input id="daysElapsed"> days elapsed</input></p>
+	<input id="daysLeft"> days left</input></p>
+	<input id="currBpi"> current bpi</input></p>
+	<input id="goalRate"> goal rate</input></p>
+	<input id="currRate"> current rate</input></p>
+	<input id="percDiff"> rate difference %</input></p>
+	<input id="parPrice"> par price</input></p>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="/js/mcafee.js"></script>
+  </body>
 </html>
