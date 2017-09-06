@@ -39,11 +39,7 @@ e = number of days elapsed from tweet date (07/17/17)
 
 When the site loads it retrives the `goalRate` and the `currRate` for comparison. If the 'GoalRate' is higher than 'CurrRate' then McAfee might be eating his own dick live on TV, else he's not. 
 
-We can get the percentage difference with the following:
-
-`percDiff = ((currRate-goalRate)/goalRate)*100`
-
-Additionally we can calculate the goal price parity with the following: 
+We can calculate the goal price parity with the following: 
 
 `parPrice = 10^(goalRate * (e/365)) * p`
 
@@ -52,6 +48,10 @@ where:
 p = Static tweet bpi (2244.265)
 
 e = number of days elapsed from tweet date (07/17/17)
+
+Additionally we can get the percentage difference with the following:
+
+`percDiff = ((c-parPrice)/parPrice)*100`
 
 ### EXAMPLE
 
@@ -69,7 +69,7 @@ Sep 5, 2017 12:11:00 UTC
 
 `currRate = LOG10(4381.31/2244.265)/(50/365) ` = 2.120867878
 
-`percDiff = ((2.120867878-0.7179145295)/0.7179145295) * 100 ` = 195.4206651% ahead of goal rate
+`percDiff = ((4381.31-2814.612374)/2814.612374) * 100 ` = 55.66299788% ahead of goal price
 
 `parPrice = 10^(0.7179145295 * (50/365)) * 2244.265` = $2814.612374
 

@@ -73,9 +73,9 @@ function getCurrRate(){
 	return currRate;
 }
 
-//percDiff = ((currRate-goalRate)/goalRate)*100
+//percDiff = ((currBpi-parPrice)/parPrice)*100
 function getPercDiff(){
-	percDiff = ((currRate-goalRate)/goalRate)*100;
+	percDiff = ((c-parPrice)/parPrice)*100;
 	var badgeStr;
 	var dickMenuStr;
 	var aheadOrBelowStr = "ahead of";
