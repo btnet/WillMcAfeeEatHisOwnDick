@@ -21,6 +21,14 @@ a = Static accrued Amount (500000)
 
 n = Number of days remaining from tweet date (07/17/17)
 
+But for the purpose of tracking the bet from a set start/ending date, we can simply use the followin.
+
+`g = LOG10(500000/2244.265)/(3) = 0.7826319559`
+
+where: 
+
+g = goal rate for three years based on starting bpi 
+
 After we determine the daily growth goal rate we can use it to compare to Bitcoins' current growth by getting the current bpi from api.coindesk.com. 
 
 `https://api.coindesk.com/v1/bpi/currentprice.json`
@@ -41,11 +49,13 @@ When the site loads it retrives the `goalRate` and the `currRate` for comparison
 
 We can calculate the goal price parity with the following: 
 
-`parPrice = 10^(goalRate * (e/365)) * p`
+`parPrice = 10^(g * (e/365)) * p`
 
 where:
 
-p = Static tweet bpi (2244.265)
+g = static goal rate 0.7826319559
+
+p = static tweet bpi (2244.265)
 
 e = number of days elapsed from tweet date (07/17/17)
 
@@ -63,7 +73,9 @@ Sep 5, 2017 12:11:00 UTC
 
 [Number of days remaining](https://www.google.com/search?q=how+many+days+till+july+17+2020): 1046
 
-[Number of days since tweet](https://www.google.com/search?q=how+many+days+since+july+17+2017): 50
+[Number of days since tweet](https://www.google.com/search?q=how+many+days+since+july+17+2017): 50\
+
+`g = LOG10(500000/2244.27)/(3) ` = 0.7826319559 
 
 `goalRate = LOG10(500000/4381.31)/(1046/365) ` = 0.7179145295
 
@@ -71,7 +83,7 @@ Sep 5, 2017 12:11:00 UTC
 
 `percDiff = ((4381.31-2814.612374)/2814.612374) * 100 ` = 55.66299788% ahead of goal price
 
-`parPrice = 10^(0.7179145295 * (50/365)) * 2244.265` = $2814.612374
+`parPrice = 10^(0.7826319559 * (50/365)) * 2244.265` = $2872.658455
 
 PS: I'm not so smart with the math thing - please correct where I am wrong.
 PPS: My first project here - I have no idea what I'm doing. You've been warned.

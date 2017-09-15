@@ -2,10 +2,11 @@ $(document).ready(function(){
 
 var p = 2244.265; //principal
 var a = 500000; //goal
+var g = 0.7826319559;//goal rate : LOG10(500000/2244.265)/(3)
 var n, //number of days left
 	e, //number of days elapsed
 	c, //current bpi
-	goalRate,
+	adjGoalRate,
 	currRate,
 	percDiff,
 	parPrice;
@@ -29,13 +30,13 @@ function getDaysLeft(){
 		dayStr = " day";
 	}
 	$("#daysLeft").text(n + dayStr);
-	return n;
+	console.log("Number of Days Left: " + n);
 }
 
 function getDaysElapsed(){
 	e = dayDiff(tDate, today);
 	$("#daysElapsed").val(e);
-	return e;
+	console.log("Number of Days Elapsed: " + e);
 }
 
 function getCurrBpi(){
@@ -43,34 +44,40 @@ function getCurrBpi(){
 	$.getJSON(url)
 	.done(function ( json ) {
 		setCurrentBpi(json.bpi.USD.rate_float);
-		getGoalRate();
 		getCurrRate();
+		dspGoalRate();
 		getParPrice();
 		getPercDiff();
 	}).fail(function (jqxhr, textStatus, error) {
 		var err = textStatus + ", " + error;
 		console.log( "Request Failed: " + err );
 	});
-	return c;
 }
 
 function setCurrentBpi(v){
 	c = Math.round(v *100)/100;
 	$("#currBpi").text("$" + c);
+	console.log("Current Bpi: " + c);
 }
 
-//goalRate = LOG10(a/c)/(n/365)
-function getGoalRate(){
-	goalRate = Math.log10(a/c)/(n/365);
-	$("#goalRate").val(goalRate);
-	return goalRate;
+//adjGoalRate = LOG10(a/c)/(n/365)
+//maybe used in the future
+function getAdjGoalRate(){
+	adjGoalRate = Math.log10(a/c)/(n/365);
+	console.log("Adjusted Goal Rate: " + adjGoalRate);
+}
+
+//g = LOG10(a/p)/(3)
+function dspGoalRate(){
+	//$("#goalRate").val(g);
+	console.log("Goal Rate: " + g);
 }
 
 //currRate = LOG10(c-p)/(e/365)
 function getCurrRate(){
 	currRate = Math.log10(c/p)/(e/365);
 	$("#currRate").val(currRate);
-	return currRate;
+	console.log("Current Rate: " + currRate);
 }
 
 //percDiff = ((currBpi-parPrice)/parPrice)*100
@@ -103,11 +110,11 @@ function getPercDiff(){
 	return percDiff;
 }
 
-//parPrice = 10^(goalRate * (e/365)) * p
+//parPrice = 10^(g * (e/365)) * p
 function getParPrice(){
-	parPrice = Math.pow(10, goalRate * (e/365)) * p;
+	parPrice = Math.pow(10, g * (e/365)) * p;
 	$("#parPrice").text("$" + Math.round(parPrice*100)/100);
-	return parPrice;
+	console.log("Par price: " + parPrice);
 }
 
 //Returns the base log
