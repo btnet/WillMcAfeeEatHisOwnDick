@@ -2,6 +2,10 @@
  * Globals
  */
 
+body {
+ font-family: Arial,sans-serif; 
+}
+
 /* Links */
 a,
 a:focus,
