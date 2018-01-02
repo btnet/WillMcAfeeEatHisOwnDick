@@ -1,5 +1,5 @@
 # WillMcAfeeEatHisOwnDick
-A website to track if McAfee is going to be eating his own dick on live TV if Bitcoin price is not over $500k in 3 years.
+A website to track if McAfee is going to be eating his own dick on live TV if Bitcoin price is not over $500k (now $1million) in 3 years.
 
 # Genesis
 3:02 PM - 17 Jul 2017 [@officialmcafee](https://twitter.com/officialmcafee/status/887024683379544065) tweeted the following:
