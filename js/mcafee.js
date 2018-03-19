@@ -14,7 +14,7 @@ var n, //number of days left
 	parPrice;
 
 var today = new Date(); //today
-var eDate = new Date("7/17/20"); //end date of bet
+var eDate = new Date("12/31/20"); //end date of bet
 var tDate = new Date("7/17/17"); //date of bet tweet
 
 function init(){
