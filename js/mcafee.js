@@ -4,7 +4,7 @@ var p = 2244.265; //principal
 //var a = 500000; //goal
 var a = 1000000; // new goal
 //var g = 0.7826319559;//goal rate : LOG10(500000/2244.265)/(3)
-var g = 0.88297529; //new goal rate : LOG10(100000/2224.256)/(3)
+var g = 0.88427174; //new goal rate : LOG10(1000000/2224.256)/(3)
 var n, //number of days left
 	e, //number of days elapsed
 	c, //current bpi
